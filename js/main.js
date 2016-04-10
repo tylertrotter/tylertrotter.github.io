@@ -20,6 +20,21 @@ $(document).on('click', '#wheel a[href]', function(e){
     }
 }).on('click', 'button.close, #overlay', function(){
     hideDetail();
+})
+// For keyboard accessibility
+$(document).on('keyup', function(e){
+    if( $('body').hasClass('detail-active') ){
+        return;
+    }
+    if( e.which === 9 && $('#quad-1').find('a').is(":focus") ){
+        rotateTo(0);
+    }else if( e.which === 9 && $('#quad-2').find('a').is(":focus") ){
+        rotateTo(90);
+    }else if( e.which === 9 && $('#quad-3').find('a').is(":focus") ){
+        rotateTo(180);
+    }else if( e.which === 9 ){
+        rotateTo(270);
+    }
 });
 
 function sizeWheel(){
@@ -33,7 +48,7 @@ function sizeWheel(){
     //  Determine body height
     /*  The wheel should go around 270 degrees. It is rotating 1 degree every 4 pixels scrolled. 
         So there should be 1080 pixels below the height of the window. */
-    $('body').height(win.height + 1081);
+    $('body').height(win.height + 1080);
     
     // Size Header
     var emSize = win.width*.002;
@@ -47,7 +62,6 @@ function sizeWheel(){
     }
     
     // Size Footer
-    console.log(win.width);
     if( win.width < 400 ){
         $('#quad-4 footer').width(win.width+10);
     }else{
@@ -61,11 +75,18 @@ function showDetail(href){
     $('body').addClass('detail-active');
     $detailContainer.load(href + " #container", function(){
         $detailContainer.find('.wrapper').prepend('<button class="close"><span class="visually-hidden">Close</span></button>');
+        $detailContainer.find('button, a').eq(0).focus();
     } );
     
 }
 function hideDetail(){
     $('body').removeClass('detail-active');
+    $('#piece-detail').find('iframe').each(function(){
+        $(this).attr('src', $(this).attr('src'));
+    })
+}
+function rotateTo(deg){
+    $('html, body').animate({ scrollTop: deg*4 });
 }
 $(document).ready(function(){ sizeWheel(); });
 $(window).resize(function(){ sizeWheel(); });
