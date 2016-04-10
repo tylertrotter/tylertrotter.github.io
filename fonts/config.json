@@ -1,0 +1,80 @@
+{
+  "name": "icons",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "289b5f92f23acf1059c93fbf401c1ad5",
+      "css": "down-open-big",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
+      "uid": "aa58e30c7196b1378a6ca78c025cc3b5",
+      "css": "behance",
+      "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0f6a2573a7b6df911ed199bb63717e27",
+      "css": "github-circled",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "627abcdb627cb1789e009c08e2678ef9",
+      "css": "twitter",
+      "code": 59397,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "6cc7af3e5b55720bcb6ef68372ce24be",
+      "css": "facebook-official",
+      "code": 59398,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "538531af0e023b15882c505ee2297cbe",
+      "css": "vimeo",
+      "code": 59392,
+      "src": "entypo"
+    },
+    {
+      "uid": "f4be2ba73a3634763091411156884dac",
+      "css": "b5119f9d97b4e562b9908fa824b0d471",
+      "code": 59394,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M979.5 102.8L895.5 18.8 492.6 421.7 88.9 18 4.9 102 408.6 505.7 5 909.3 89 993.4 492.6 589.8 895.4 992.6 979.5 908.6 576.6 505.7Z",
+        "width": 1000
+      },
+      "search": [
+        "b5119f9d97b4e562b9908fa824b0d471"
+      ]
+    },
+    {
+      "uid": "72109d2fb3088d0e66ea6a9204297651",
+      "css": "spin1",
+      "code": 59399,
+      "src": "fontelico"
+    },
+    {
+      "uid": "7c94c4b0f7f694497f17d6fd26c49e55",
+      "css": "x",
+      "code": 59394,
+      "src": "custom_icons",
+      "selected": false,
+      "svg": {
+        "path": "M523.3 500L728.3 295C735 288.3 735 278.3 728.3 271.7S711.7 265 705 271.7L500 476.7 295 271.7C288.3 265 278.3 265 271.7 271.7 265 278.3 265 288.3 271.7 295L476.7 500 271.7 705C265 711.7 265 721.7 271.7 728.3 275 731.7 280 733.3 283.3 733.3S291.7 731.7 295 728.3L500 523.3 705 728.3C708.3 731.7 713.3 733.3 716.7 733.3S725 731.7 728.3 728.3C735 721.7 735 711.7 728.3 705L523.3 500Z",
+        "width": 1000
+      },
+      "search": [
+        "x"
+      ]
+    }
+  ]
+}
