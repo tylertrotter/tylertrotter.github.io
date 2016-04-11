@@ -12,11 +12,13 @@ $(window).scroll(function(){
        $('#preloading').append('<img src="img/biltmore-forest-1-800.png"><img src="img/peg-the-price-1-800.png"><img src="img/valdosta-1-800.jpg">');  
     }
 });
-
+$(window).bind( 'hashchange', function(e) {
+    hideDetail();
+});
 $(document).on('click', '#wheel a[href]', function(e){
     e.preventDefault();
     if( !$('body').hasClass('detail-active') ){
-        showDetail($(this).attr('href'));
+        showDetail($(this));
     }
 }).on('click', 'button.close, #overlay', function(){
     hideDetail();
@@ -51,7 +53,7 @@ function sizeWheel(){
     $('body').height(win.height + 1080);
     
     // Size Header
-    var emSize = win.width*.002;
+    var emSize = mainAxis.length*.002;
     $('h1').css('font-size', emSize + 'em');
     if(emSize < .8){
         $('h1').find('.small').css('font-size', '.9em');
@@ -69,10 +71,12 @@ function sizeWheel(){
     }
 }
 
-function showDetail(href){
+function showDetail($this){
+    var href = $this.attr('href');
     var $detailContainer = $('#piece-detail');
     $detailContainer.html('<div class="loading">Loading</div>');
     $('body').addClass('detail-active');
+    history.pushState({}, $this.attr('title'), '#'+href);
     $detailContainer.load(href + " #container", function(){
         $detailContainer.find('.wrapper').prepend('<button class="close"><span class="visually-hidden">Close</span></button>');
         $detailContainer.find('button, a').eq(0).focus();
@@ -80,6 +84,7 @@ function showDetail(href){
     
 }
 function hideDetail(){
+    window.location.hash = '';
     $('body').removeClass('detail-active');
     $('#piece-detail').find('iframe').each(function(){
         $(this).attr('src', $(this).attr('src'));
@@ -88,7 +93,12 @@ function hideDetail(){
 function rotateTo(deg){
     $('html, body').animate({ scrollTop: deg*4 });
 }
-$(document).ready(function(){ sizeWheel(); });
+$(document).ready(function(){ 
+    sizeWheel(); 
+    if( $(window).scrollTop() === 0){
+        rotateTo(45); 
+    }
+});
 $(window).resize(function(){ sizeWheel(); });
 function debounce(func, wait, immediate) {
 	var timeout;
