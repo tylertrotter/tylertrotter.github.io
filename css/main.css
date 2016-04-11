@@ -147,7 +147,7 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
 #quad-3 .piece-3{ left: 0; top: 61.52%; width: 15.38%; height: 15.38%; }
 
 #piece-detail{ background: #555555; width: 100%; max-width: 800px; margin: 0 auto; min-height: 100%; }
-#piece-detail.ajax{ margin: 0; overflow-y: scroll; overflow-x: hidden; right: -100%; top: 0; position: fixed; z-index: 3; height: 100%; -webkit-transition: right .5s; transition: right .5s; }
+#piece-detail.ajax{ margin: 0; overflow-y: scroll; overflow-x: hidden; -webkit-overflow-scrolling: touch; right: -100%; top: 0; position: fixed; z-index: 3; height: 100%; -webkit-transition: right .5s; transition: right .5s; }
 #piece-detail.ajax .wrapper{ padding-top: 3.3em; }
 .detail-active #piece-detail{ right: 0; }
 #piece-detail h2{ color: #a2a2a2; font-size: 2em; margin: 0; line-height: 0; padding-left: .1em; padding-right: 32px; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); -ms-transform-origin: 0 100%; -webkit-transform-origin: 0 100%; transform-origin: 0 100%; line-height: .65; margin-top: -.6em; min-width: 18em; }
@@ -169,10 +169,12 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
 }
 @media (max-width: 660px){
    #piece-detail .description, #piece-detail .media{ width: 50%; }
+    .media iframe{ height: 180px; }
 }
 @media (max-width: 570px){
     .description-media{ display: block; }
     #piece-detail .description, #piece-detail .media{ width: 100%; padding: 0; }
+    .media iframe{ height: 280px; }
 }
 @media (max-width: 650px){
    width: 46.14%;
