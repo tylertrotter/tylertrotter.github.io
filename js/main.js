@@ -13,7 +13,9 @@ $(window).scroll(function(){
     }
 });
 $(window).bind( 'hashchange', function(e) {
-    hideDetail();
+    if( window.location.hash.length < 1){
+        hideDetail();
+    }
 });
 $(document).on('click', '#wheel a[href]', function(e){
     e.preventDefault();
@@ -55,14 +57,7 @@ function sizeWheel(){
     // Size Header
     var emSize = mainAxis.length*.002;
     $('h1').css('font-size', emSize + 'em');
-    if(emSize < .8){
-        $('h1').find('.small').css('font-size', '.9em');
-    }else if(emSize < 1.2){
-        $('h1').find('.small').css('font-size', '.8em');
-    }else{
-        $('h1').find('.small').attr('style', '');
-    }
-    
+
     // Size Footer
     if( win.width < 400 ){
         $('#quad-4 footer').width(win.width+10);
@@ -76,7 +71,8 @@ function showDetail($this){
     var $detailContainer = $('#piece-detail');
     $detailContainer.html('<div class="loading">Loading</div>');
     $('body').addClass('detail-active');
-    history.pushState({}, $this.attr('title'), '#'+href);
+    //history.pushState({}, $this.attr('title'), '#'+href);
+    window.location.hash = href.split('.')[0];
     $detailContainer.load(href + " #container", function(){
         $detailContainer.find('.wrapper').prepend('<button class="close"><span class="visually-hidden">Close</span></button>');
         $detailContainer.find('button, a').eq(0).focus();
@@ -96,7 +92,7 @@ function rotateTo(deg){
 $(document).ready(function(){ 
     sizeWheel(); 
     if( $(window).scrollTop() === 0){
-        rotateTo(45); 
+        rotateTo(19); 
     }
 });
 $(window).resize(function(){ sizeWheel(); });
