@@ -127,8 +127,8 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
 
 #wheel{ position: fixed; -ms-transform-origin: center; -webkit-transform-origin: center; transform-origin: center; z-index: 1; }
 #wheel > div{ width: 50%; height: 50%; position: absolute; }
-#wheel a{ position: absolute; background-color: #eee; background-size: cover; background-position: center center; background-repeat: no-repeat; -webkit-transition: all .2s; transition: all .2s; }
-#wheel a:hover, #wheel a:focus{ -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); z-index: 2; }
+#wheel a{ position: absolute; background-color: #eee; background-size: cover; background-position: center center; background-repeat: no-repeat; -webkit-transition: all .2s; transition: all .2s; outline-color: black; }
+#wheel a:hover, #wheel a:focus{ -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); z-index: 2; outline: 4px solid rgba(255,201,54,.3); }
 #quad-3{ -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 #quad-4{ left: 50%; -ms-transform: rotate(270deg); -webkit-transform: rotate(270deg); transform: rotate(270deg); }
 #quad-2{ top: 50%; -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); z-index: 2; }

@@ -1,5 +1,8 @@
 $(window).load(function(){
-   $('#preloading').append('<img src="img/cognito-1-800.png"><img src="img/iop-1-800.jpg"><img src="img/dew-1-800.png">'); 
+    $('#preloading').append('<img src="img/cognito-1-800.png"><img src="img/iop-1-800.jpg"><img src="img/dew-1-800.png">'); 
+    if( window.location.hash.length > 0){
+        $('#wheel').find('[href^="' + window.location.hash.substr(1) + '"]').trigger('click');
+    }
 });
 
 $(window).scroll(function(){
@@ -10,11 +13,6 @@ $(window).scroll(function(){
     }
     if( rotation < -120 ){
        $('#preloading').append('<img src="img/biltmore-forest-1-800.png"><img src="img/peg-the-price-1-800.png"><img src="img/valdosta-1-800.jpg">');  
-    }
-});
-$(window).bind( 'hashchange', function(e) {
-    if( window.location.hash.length < 1){
-        hideDetail();
     }
 });
 $(document).on('click', '#wheel a[href]', function(e){
@@ -71,8 +69,8 @@ function showDetail($this){
     var $detailContainer = $('#piece-detail');
     $detailContainer.html('<div class="loading">Loading</div>');
     $('body').addClass('detail-active');
-    //history.pushState({}, $this.attr('title'), '#'+href);
     window.location.hash = href.split('.')[0];
+    $('#wheel').find('a').attr('tabindex', '-1');
     $detailContainer.load(href + " #container", function(){
         $detailContainer.find('.wrapper').prepend('<button class="close"><span class="visually-hidden">Close</span></button>');
         $detailContainer.find('button, a').eq(0).focus();
@@ -80,8 +78,11 @@ function showDetail($this){
     
 }
 function hideDetail(){
-    window.location.hash = '';
+    $('#wheel').find('[href^="' + window.location.hash.substr(1) + '"]').focus();
+    window.location.hash = '!';
     $('body').removeClass('detail-active');
+    $('#piece-detail').attr('tabindex', '-1').find('a').blur();
+    $('#wheel').find('a').attr('tabindex', '');
     $('#piece-detail').find('iframe').each(function(){
         $(this).attr('src', $(this).attr('src'));
     })
