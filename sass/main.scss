@@ -124,6 +124,10 @@ h2{ font-size: 2em; }
 button.close{ background: none; color: white; border: none; position: absolute; font-size: 1.6em; padding: 0; margin-top: -1.6em; opacity: .8; -webkit-transition: all .3s; transition: all .3s; }
 button.close:before{ content: $cancel; font-family: 'icons'; }
 button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); opacity: 1; outline: none; }
+#piece-detail a.main-image[href],
+#piece-detail a.main-image[href]:hover,
+#piece-detail a.main-image[href]:focus
+{ border: 0; }
 
 #wheel{ position: fixed; -ms-transform-origin: center; -webkit-transform-origin: center; transform-origin: center; z-index: 1; }
 #wheel > div{ width: 50%; height: 50%; position: absolute; }
@@ -136,7 +140,8 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
 
 #quad-1 .piece-1{ left: $grid_1; top: $grid_6; width: $grid_4; height: $grid_4; }
 #quad-1 .piece-2{ left: $grid_5; top: $grid_5; width: $grid_2; height: $grid_2; }
-#quad-1 .piece-3{ left: 0; top: $grid_2; width: $grid_1;; height: $grid_1;; }
+#quad-1 .piece-3{ left: 0; top: $grid_2; width: $grid_1; height: $grid_1; }
+#quad-1 .piece-4{ left: $grid_9; top: $grid_3; width: $grid_3; height: $grid_4; }
 
 #quad-2 .piece-1{ left: $grid_4; top: 0; width: $grid_3; height: $grid_3; }
 #quad-2 .piece-2{ left: $grid_9; top: $grid_3; width: $grid_2; height: $grid_2; }
@@ -157,15 +162,16 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
 .media iframe{ width: 100%; background: #484848; }
 .media figure{ margin: 0 0 32px 0; }
 
-#piece-detail a{ color: $color; text-decoration: none; }
-#piece-detail a[href]{ border-bottom: 1px solid rgba($color,.5); display: inline-block; padding-bottom: 1px; -webkit-transition: border-color .1s; transition: border-color .1s; }
-#piece-detail a[href]:hover, #piece-detail a[href]:focus{ border-bottom: 2px solid rgba($color,1); display: inline-block; padding-bottom: 0; }
+#piece-detail .wrapper a{ color: $color; text-decoration: none; }
+#piece-detail .wrapper a[href]{ border-bottom: 1px solid rgba($color,.5); display: inline-block; padding-bottom: 1px; -webkit-transition: border-color .1s; transition: border-color .1s; }
+#piece-detail .wrapper a[href]:hover,
+#piece-detail .wrapper a[href]:focus{ border-bottom: 2px solid rgba($color,1); display: inline-block; padding-bottom: 0; }
 
 #quad-4 footer{ width: $grid_7; height: 140%; background-color: $color; margin-left: -1.92%; padding: 6.08% 20% 0 8%; font-size: .8em; position: relative; }
 #quad-4 footer .me{ margin-bottom: 16px; }
 
 @media (max-width: 850px){
-   #quad-4 footer{ padding: 6.08% 6.08% 0 6.08%; } 
+   #quad-4 footer{ padding: 6.08% 6.08% 0 6.08%; }
 }
 @media (max-width: 660px){
    #piece-detail .description, #piece-detail .media{ width: 50%; }
@@ -183,7 +189,7 @@ button.close:hover, button.close:focus{ -ms-transform: scale(1.1); -webkit-trans
     #piece-detail{ font-size: .9em; }
     .wrapper{ padding: 32px 16px; }
     .description-media{ padding-left: 2.6em; }
-    #quad-4 footer{ width: 100%; padding: 0; }   
+    #quad-4 footer{ width: 100%; padding: 0; }
     #quad-4 footer .bio{ padding: 0 32px; }
 }
 @media (max-height: 400px){
