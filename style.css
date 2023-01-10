@@ -596,7 +596,7 @@ opacity: 1;
   }
 
   .projects.is-active {
-    height: 100vh;
+    height: 100%;
   }
 
   .projects__list {
