@@ -8,6 +8,9 @@
   --primary1: #3F0042;
   --primary2: #6C0072;
   --primary3: #841b7b;
+  --muted: #e4d9e3;
+  --muted-dark: #291428;
+  --overlay: hsla(303, 20%, 12%, .9);
   --accent1: #BC0082;
   --accent2: #FF17AC;
   --accent3: #fdc2ea;
@@ -43,7 +46,7 @@
 }
 
 body::-webkit-scrollbar-track {
-  background: black;
+  background: var(--muted-dark);
 }
 
 .project::-webkit-scrollbar-thumb {
@@ -64,10 +67,7 @@ body::-webkit-scrollbar-track {
 img,
 svg {
   max-width: 100%;
-}
-
-svg {
-  height: auto;
+  height: auto;  
 }
 
 html,
@@ -87,6 +87,7 @@ body {
 h1,
 h2,
 h3,
+h4,
 .bio__tag,
 button {
   font-family: var(--avant-garde);
@@ -375,7 +376,15 @@ opacity: 1;
   margin-top: min(1.75rem, 2.5vh);
 }
 
-.project__cta:not([href]):hover {
+.project__cta::before {
+  content: 'Read More';
+}
+
+.project__cta:not([href])::before {
+  content: 'Details to Come';
+}
+
+.project__cta:not([href]) {
   cursor: not-allowed;
   background: var(--primary3);
 }
