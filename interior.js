@@ -42,7 +42,7 @@ function closeLightbox() {
 }
 
 const IO = new IntersectionObserver(IOCallback, {
-  rootMargin: `0px 0px ${window.innerHeight * -.6}px 0px`,
+  rootMargin: `0px 0px ${window.innerHeight * -.66}px 0px`,
   threshold: 1.0
 })
 
