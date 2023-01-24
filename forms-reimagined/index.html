@@ -65,26 +65,26 @@
                 <h2>Forms Reimagined</h2>
                 <div class="content__description">Re-building Cognito’s Forms UI from Scratch</div>
 
-                <p>Cognito Forms is an online form builder that allows its users to drag and drop fields on a canvas and, without needing to code, create sophisticated forms that can collect data in smart ways. The resulting form generated is hosted at a Cognito URL as well as available to be embedded on any website. <a href="https://www.cognitoforms.com/Tyler3/WebsiteFeedbackForm" target="_blank">See an example Cognito Form here.</a></p>
+                <p>Cognito Forms is an online form builder that allows its users to drag and drop fields on a canvas and, without needing to code, create sophisticated forms that can collect data in smart ways. The form is hosted at a Cognito URL as well as available to be embedded on any website. <a href="https://www.cognitoforms.com/Tyler3/WebsiteFeedbackForm" target="_blank">See an example Cognito Form here.</a></p>
 
-                <p>By 2018 the front-end technology forms were built on was dated and the technical debt accrued was due to be paid so a complete refactor was in order.</p>
+                <p>Cognito got its start in 2013 and five years later the technology it was built on was dated and the technical debt of the codebase was due. So we went about rebuilding it from the ground up.</p>
                 
-                <h3>The front end of the front end</h3>
+                <h3>The Front of the Front-end</h3>
                 
-                <p>I was mainly responsible for the front end of the front end, in other words, the UI. The goal was to recreate the existing forms on newer, better structured, tech, but I also took opportunities to improve things where I could.</p>
+                <p>I was responsible for making over the front end of the front-end, in other words, the UI. My goal was to recreate the existing UI on newer and better-structured code without reinventing the wheel. However, I was able to also include countless small (and sometimes big) improvements along the way.</p>
 
                 <h3 id="vue-components">Vue Components</h3>
-                <p>The dev team decided to use Vue in the refactor. None of us had much experience with any modern JS library but when weighing options the simplicity of Vue tipped the scales.</p>
+                <p>The dev team decided to use Vue in the refactor. When weighing the options the simplicity of Vue tipped the scales in its favor. Our forms support a lot of different field types, each with complex requirements, so unavoidably we have a whole lot of code. Using Vue allowed us to manage this complexity.</p>
 
-                <p>Settling on Vue, we then shopped around for an open source component library to use as a jumping off point. Element.io suited our needs best. We eventually forked it so we could customize it to the extent necessary.</p>
+                <p>Settling on Vue, we then shopped around for an open source component library to use as a jumping off point. Element.io suited our needs best. We eventually forked it so we could truly make it our own.</p>
 
-                <h3 id="custom-css-properties-theming">CSS Custom Properties & Theming</h3>
+                <h3 id="custom-css-properties-theming">CSS Custom Properties &amp; Theming</h3>
                 
-                <p>Cognito Forms allows its users to customize the look forms they create in a simple style editor. What can’t be styled in this editor can probably be tweaked with CSS if the form creator has the ability and is embedding the form on a website.</p>
+                <p>Cognito Forms allows its users to customize the look of forms they create in a simple style editor. What can’t be styled in this editor can probably be tweaked with CSS.</p>
 
-                <p>I decided early on that I wanted to use CSS custom properties in the CSS so our forms could be easily customized. For example, with one spacing variable the breathing room of all elements can be adjusted. One variable adjusts the relative speed of all animations. The style editor doesn’t leverage all of these variables, but that is just a simple matter of adding on to the UI. In the meantime, customers can tweak variables if they’re handy with CSS.</p>
+                <p>Early on I decided I wanted to use CSS custom properties for more flexibility. For example, by changing one spacing variable the breathing room of all elements on the form are adjusted. One variable adjusts the relative speed of all animations. The style editor doesn’t leverage all of these variables, but that is just a simple matter of adding on to the UI. In the meantime, customers can easily tweak these variables if they’re handy with CSS.</p>
 
-                <p>Unfortunately we still supported IE 11 when we first launched V2 and that browser did not support custom variables. However, it was possible, with a polyfill and several headaches, to get them to work in IE 11.</p>
+                <p>IE 11 does not support custom variables and, unfortunately, at the time we launched the overhauled forms, we still supported that browser. However, it was possible, with a polyfill and several headaches, to get everything to work well enough in IE 11.</p>
 
                 <div class="content__images content__images--3">
                   <figure>
@@ -93,27 +93,18 @@
                   </figure>
                   <figure>
                     <img src="/images/v2-custom-styles.png" width="800" height="800" loading="lazy" />
-                    <figcaption>Selection color can be easily updated</figcaption>
+                    <figcaption>Custom form styles</figcaption>
                   </figure>
                   <figure>
                     <img src="/images/v2-file-upload.png" width="800" height="800" loading="lazy" />
-                    <figcaption>Upload field with in-house icons</figcaption>
+                    <figcaption>Upload field with custom file icons</figcaption>
                   </figure>
                  
                 </div>
 
                 <h3 id="svg-icons">SVG Icons</h3>
                 
-                <p>Like so many others at the time, V1 Cognito Forms used a font for icons - FontAwesome, to be precise. I wanted V2 forms to not look generic, but to have custom icons, and even more important, easily customizable icons. From experience I knew that adding icons to a font file is a hassle, but that’s what we needed to do in the past to convey some very specific semantics which weren’t covered by the FontAwesome library. One cool benefit to using SVGs is that now customers can adjust the weight of the icons via a CSS custom property.</p>
-                
-                <!-- TODO 
-                <div class="content__images">
-                  <figure>
-                    <img src="https://picsum.photos/1200/300" width="1200" height="300" loading="lazy" />
-                    <figcaption>Dynamic Icons</figcaption>
-                  </figure>
-                </div>
-                -->
+                <p>Being a product of its time, Cognito Forms used a font for icons&mdash;FontAwesome, to be precise. I wanted V2 forms to not look generic, but to have custom icons, and even more important, easily customizable icons. From experience I knew that adding icons to a font file is a hassle, but that’s what we needed to do in the past to convey some very specific semantics which weren’t covered by the FontAwesome library. One cool benefit to using SVGs is that now customers can adjust the weight of the icons via a CSS custom property.</p>
 
                 <h3 id="accessibility">Accessibility</h3> 
                 <p>Many customers need the forms they build to be accessible. I worked hard to ensure forms built with default styles would meet the WCAG AA standard. One big obstacle to this objective was our signature field. In V1, it was impossible to fill out without a mouse or a touchscreen - keyboard-only users would be unable to submit the form if the signature was made a required field. We advised customers concerned about accessibility to not use required signature fields, but I wanted to expand our accessibility to include all of our fields and I saw the V2 upgrade as a good opportunity to do so. Today if a signature is required, the keyboard-only user can tab to the “type” toggle button and then type out a signature in a typeface almost guaranteed to be better than their own cursive. Since our customers aren’t limited to English speakers, users typing in other character sets such as Cyrillic or Chinese, script typefaces which were made for those characters are downloaded.</p>
