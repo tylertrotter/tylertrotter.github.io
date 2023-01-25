@@ -276,7 +276,9 @@ button{
 }
 
 .project.is-active > .project__heading {
-  display: none;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .projects__list[data-active-cell] .project:not(.is-active) .project__heading {
@@ -286,6 +288,10 @@ button{
   align-items: center;
   justify-content: center;
   transform: scale(.7);
+}
+
+.projects__list:not([data-active-cell]) .project .project__heading {
+  transition: transform 1s, opacity 1s;
 }
 
 .project.is-active .project__content {
