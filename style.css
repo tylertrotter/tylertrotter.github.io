@@ -35,6 +35,14 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--contrast3);
+}
+
+.projects ::selection {
+  background: var(--contrast2);
+}
+
 ::-webkit-scrollbar {
   background: transparent;
   width: 10px;
