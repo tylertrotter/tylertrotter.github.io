@@ -1,5 +1,17 @@
 const images = document.querySelectorAll('.content__images img');
 
+const TocLinks = document.querySelectorAll('.content__nav a');
+
+TocLinks.forEach(a => {
+  a.addEventListener('click', e => {
+    gtag('event', 'toc_click', {
+      page_title: document.title + ' / ' + e.target.innerHTML,
+      page_location: window.location + e.target.getAttribute('href'),
+      send_to: 'G-GWPPZWQTT3'
+    });
+  })
+});
+
 images.forEach(img => {
   img.setAttribute('tabIndex', 0);              
   img.addEventListener('click', e => enlargeImage(e));
@@ -29,6 +41,12 @@ function enlargeImage(e) {
   lightbox.appendChild(e.target.cloneNode());
   document.body.appendChild(lightbox);
   exButton.focus();
+  const src = e.target.getAttribute('src');
+  gtag('event', 'image_view', {
+    page_title: 'Image: ' + src.replace('/images/', ''),
+    page_location: 'https://ttrotter.com/' + src,
+    send_to: 'G-GWPPZWQTT3'
+  });
 }
 
 function closeLightbox() {
