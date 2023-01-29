@@ -228,7 +228,6 @@
           removeSelection(e)
       });
       
-      
       document.querySelectorAll('.project').forEach(project => {
         project.addEventListener('click', e => handleProjectClick(e));
       })
@@ -256,13 +255,20 @@
       function handleProjectClick(e) {
         const projectsContainer = document.querySelector('.projects__list');
         const newProject = e.target.closest('.project');
-        if (projectsContainer.getAttribute('data-active-cell') === newProject.getAttribute('id'))
+        const id = newProject.getAttribute('id');
+        if (projectsContainer.getAttribute('data-active-cell') === id)
           return;
 
         removeSelection();
         document.querySelector('.projects').classList.add('is-active');
         newProject.classList.add('is-active');
-        projectsContainer.setAttribute('data-active-cell', newProject.getAttribute('id'));
+        projectsContainer.setAttribute('data-active-cell', id);
+
+        gtag('event', 'summary_view', {
+          page_title: 'Home#' + id,
+          page_location: 'https://ttrotter.com#' + id,
+          send_to: 'G-GWPPZWQTT3'
+        });
       }
 
       function removeSelection() {
