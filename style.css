@@ -13,7 +13,7 @@
   --overlay: hsla(303, 20%, 12%, .9);
   --accent1: #BC0082;
   --accent2: #FF17AC;
-  --accent3: #fdc2ea;
+  --accent3: #ffe2f6;
   --contrast1: #0072B2;
   --contrast2: #109EFF;
   --contrast3: #CCE8FF;
@@ -154,7 +154,7 @@ button{
 }
 
 .bio__copy {
-  font-size: min(1rem, 3.8vw);
+  font-size: 1.4rem;
 }
 
 .bio__copy p:first-child {
