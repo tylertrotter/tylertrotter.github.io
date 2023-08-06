@@ -316,7 +316,7 @@ button{
   font-size: clamp(.95rem, 1vw, 1.1rem);
 }
 
-[data-input='keyboard'] :focus {
+[data-input='keyboard']:root :focus {
   outline: 3px solid var(--accent2);
 }
 
