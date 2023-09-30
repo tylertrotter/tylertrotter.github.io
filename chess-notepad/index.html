@@ -5,100 +5,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <style>
-      :root{--magic:#230051;--plum:#381e5a;--snip:#38007f;--spice:#af2aba;--putty:#e0d7ec;--cream:#fffbec;--miami:#d93c91;--negative:var(--miami);--origin:var(--snip);--active:linear-gradient(156deg,var(--spice) 12%,var(--snip) 93.26%);--monospace:ui-monospace,Menlo,Monaco,"Cascadia Mono","Segoe UI Mono","Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Fira Mono","Droid Sans Mono","Courier New",monospace}button[disabled]{background:var(--plum)}*,:after,:before{box-sizing:border-box}body{margin:0;background:var(--magic);color:var(--putty)}.wrapper{padding:16px;margin:0 auto}body,button,input,select{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-size:14px;color:var(--putty)}.ex-button{position:absolute;right:0;border:0;background:transparent}h1{color:var(--color3)}.visually-hidden{position:absolute;left:-200vw}.monospace{font-family:var(--monospace)}svg[viewbox="0 0 18 18"]{fill:none;stroke:#fffbec;stroke-width:2;stroke-linecap:round;width:30px}a{color:var(--cream)}.almost-half{height:45dvh;position:relative}.chess-controls{height:10dvh}.flip{transform:scale(-1)}
+     :root{--magic:#230051;--plum:#381e5a;--snip:#38007f;--spice:#af2aba;--putty:#e0d7ec;--cream:#fffbec;--miami:#d93c91;--negative:var(--miami);--origin:var(--snip);--active:linear-gradient(156deg,var(--spice) 12%,var(--snip) 93.26%);--monospace:ui-monospace,Menlo,Monaco,"Cascadia Mono","Segoe UI Mono","Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Fira Mono","Droid Sans Mono","Courier New",monospace;--ad-height:60px}button[disabled]{opacity:.3}*,:after,:before{box-sizing:border-box}body{margin:0;background:var(--magic);color:var(--putty)}.wrapper{padding:16px}[id=app] .wrapper:first-child{padding-top:32px}body,button,input,select{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-size:14px;color:var(--putty)}.button{border:1px solid var(--putty);border-radius:40px;font-size:18px;padding:.6em 1em;text-decoration:none}.button,.ex-button{background:transparent}.ex-button{position:absolute;right:5px;top:5px;padding:12px;border:0;border-radius:50%}h1{color:var(--color3)}.visually-hidden{position:absolute;left:-200vw}.monospace{font-family:var(--monospace)}svg[viewBox="0 0 18 18"]{fill:none;stroke:#fffbec;stroke-width:2;stroke-linecap:round;width:30px}a{color:var(--cream)}.intro{background:var(--active);text-align:center}.logo{width:20vw;margin-left:-3vw}.intro header{display:flex;gap:10px;font-size:5vw;justify-content:center;align-items:center}.intro h1{font-size:1.65em;margin:0;color:var(--cream)}.intro p{font-size:16px;border-top:1px solid var(--magic);padding-top:1em}.ad{position:fixed;bottom:0;width:100%;background:var(--plum);padding:10px;min-height:var(--ad-height)}.home{padding-bottom:calc(var(--ad-height) + 30px)}.clocks{text-align:center;margin-bottom:1.5em}.clocks h2{font-size:24px}.clock-buttons{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:3vw;justify-content:center}.clock-buttons .button{display:block;width:43vw}.custom-time{background:var(--cream);color:var(--magic);border:0;margin-top:1.2em;width:50vw}.base-time,.custom-time{font-weight:700}.bonus-time:before{content:" | ";opacity:.4}.text-center{text-align:center}.almost-half{height:45dvh;position:relative}.chess-controls{height:10dvh}.flip{transform:scale(-1)}
+    </style>
+    <style>
+      .chess-notepad__full-instructions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--magic);
+      }
     </style>
   </head>
   <body>
-    <main class="wrapper">
-      <h1>Chess Notepad</h1>
-      <div>Chess notation and clock in one</div>
+    <main class="home">
+      <section class="intro wrapper">
+        <header>
+          <svg class="logo" viewBox="0 0 542 788" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M195.457 342.954C195.457 453.633 165.591 534.446 130.455 606.476" stroke="#FFFBEC" stroke-width="23.6364"/>
+            <path d="M342.995 343.745C342.995 453.76 372.681 534.088 407.606 605.684" stroke="#FFFBEC" stroke-width="23.6364"/>
+            <rect x="145.015" y="274.944" width="251.97" height="60.4777" rx="30.2388" stroke="#FFFBEC" stroke-width="25.6061"/>
+            <path d="M471.277 670.147V670.147C471.277 631.336 439.815 599.874 401.004 599.874H140.996C102.185 599.874 70.7234 631.336 70.7234 670.147V670.147" stroke="#FFFBEC" stroke-width="25.6061"/>
+            <path d="M528.746 761.878V773.785C528.746 773.958 528.746 774.123 528.746 774.28C528.588 774.281 528.423 774.281 528.25 774.281H13.7496C13.5767 774.281 13.4118 774.281 13.2542 774.28C13.2541 774.123 13.2541 773.958 13.2541 773.785C13.2541 747.245 13.3755 736.619 15.7359 728.258C21.97 706.174 39.229 688.915 61.3124 682.681C69.674 680.321 80.2998 680.199 106.84 680.199H381.692H447.067C462.134 680.199 468.183 680.239 473.042 681.005C501.31 685.464 523.481 707.636 527.94 735.903C528.706 740.762 528.746 746.811 528.746 761.878Z" stroke="#FFFBEC" stroke-width="25.6061" stroke-linecap="round"/>
+            <path d="M138.514 199.954L148.023 206.972L148.023 206.972L138.514 199.954ZM276.442 13.0638L285.951 20.0816L285.951 20.0816L276.442 13.0638ZM279.612 13.0638L289.121 6.04602L289.121 6.04602L279.612 13.0638ZM417.54 199.954L408.031 206.972L408.031 206.972L417.54 199.954ZM339.93 263.221C335.315 267.836 335.315 275.319 339.93 279.935C344.545 284.55 352.028 284.55 356.644 279.935L339.93 263.221ZM148.023 206.972L285.951 20.0816L266.933 6.04601L129.005 192.936L148.023 206.972ZM270.103 20.0816L408.031 206.972L427.049 192.936L289.121 6.04602L270.103 20.0816ZM408.991 194.16L339.93 263.221L356.644 279.935L425.705 210.873L408.991 194.16ZM216.124 263.221L147.063 194.16L130.349 210.873L199.41 279.935L216.124 263.221ZM408.031 206.972C405.138 203.052 405.546 197.605 408.991 194.16L425.705 210.873C430.528 206.05 431.1 198.425 427.049 192.936L408.031 206.972ZM285.951 20.0816C282.015 25.4154 274.039 25.4154 270.103 20.0816L289.121 6.04602C283.61 -1.4213 272.444 -1.4213 266.933 6.04603L285.951 20.0816ZM129.005 192.936C124.954 198.425 125.526 206.05 130.349 210.873L147.063 194.16C150.508 197.605 150.916 203.052 148.023 206.972L129.005 192.936Z" fill="#FFFBEC"/>
+            <line x1="277.581" y1="13.7867" x2="277.581" y2="185.548" stroke="#FFFBEC" stroke-width="23.6364"/>
+            <circle cx="277.413" cy="172.213" r="21.4465" stroke="#FFFBEC" stroke-width="23.6364"/>
+          </svg>
   
-      <p>Easily save over the board chess games while mastering algebraic notation without even trying.</p>
-  
-      <section>
-        <h2>
-          <button id="explainer-button">How Chess Notepad Works</button>
-        </h2>
-        <section id="explainer" class="chess-notepad__full-instructions" hidden>
-          <h3>How the Clock Works</h3>
-          <p>Clocks are set as "N minutes | N increment seconds". The increment is added after each move.</p>
-          <p>The screen is divided in half. Black taps his or her clock to start the other clock and the game.</p>
-  
-          <h3>How to Notate Your Moves</h3>
-          <p>This app is meant to guide you in notation while also teaching you how to do it. Each player will get a serious of buttons for notation once they've made their move and stopped their clock.</p>
-  
-          <h4>Step 1: Note the piece you moved</h4>
-          <p>The first step is to note the kind of piece you moved. Tap the letter of the piece:</p>
-  
-          <ul>
-            <li>"K" = King</li>
-            <li>"Q" = Queen</li>
-            <li>"B" = Bishop</li>
-            <li>"N" = Knight</li>
-            <li>"R" = Rook</li>
-            <li>" " = Pawn</li>
-          </ul>
-  
-          <p>Knight's are known as N since K is reserved for the king. If a letter is not given that indicates a pawn. That's what the blank button is for.</p>
-  
-          <div class="callout">
-            NB: Castling requires you only tap one button, there are two button options availabe one for kingside castling and one for queenside.
+          <div>
+            <h1>Chess Notepad</h1>
+            <div>Chess Notation and Clock</div>
           </div>
+        </header>
   
-          <h4>Steps 2 & 3: Note the square you moved to</h4>
-          <p>The board is composed of files (columns) and ranks (rows). They are both named from white's perspective. The file with white's leftmost rook is "a", the next one is "b" and so on until "h". The rank where white's major pieces start is "1", white's pawns start on "2" and so on. This arrangment means that black's leftmost rook starts on the h file and the 8th rank. In this system, each square has a name such as f4 or b8.</p>
+      <p>Easily save over the board chess games while mastering algebraic notation without&nbsp;trying.</p>
   
-          <p>In most cases, noting the piece and the square is all you need to do.</p>
+      <h2>
+        <button class="button center" id="explainer-button">How Chess Notepad Works</button>
+      </h2>
+      <section id="explainer" class="chess-notepad__full-instructions" hidden>
+        <button class="ex-button">
+          <span class="visually-hidden">close</span>
+          <svg viewBox="0 0 18 18">
+            <path d="M13.2095 4.89523L4.99998 13.1048" />
+            <path d="M13.2095 13.1048L4.99998 4.89525" />
+          </svg>
+        </button>
+        <h3>How the Clock Works</h3>
+        <p>Clocks are set as "N minutes | N increment seconds". The increment is added after each move.</p>
+        <p>The screen is divided in half. Black taps his or her clock to start the other clock and the game.</p>
   
-          <h4>Special Circumstances</h4>
-          <p>However, some circumstances require more information.</p>
+        <h3>How to Notate Your Moves</h3>
+        <p>This app is meant to guide you in notation while also teaching you how to do it. Each player will get a serious of buttons for notation once they've made their move and stopped their clock.</p>
   
-          <h5>Disambiguating Pieces</h5>
-          <p>Depending on how the board is arranged, the same type of piece may legally be able to move to the same square. For example, if both white rooks are on the first rank with no pieces between them, either rook may move anywhere between them. In this instance you would need to specify the square the rook came from as well as its destination square.</p>
+        <h4>Step 1: Note the piece you moved</h4>
+        <p>The first step is to note the kind of piece you moved. Tap the letter of the piece:</p>
   
-          <p>You only need to provide either the file or rank of the starting square since that is almost always enough to disambiguate. However sometimes you need to specify both rank and file and it never hurts to specify both. You can do this by pressing "Note Starting Position" after you've indicated which piece you've moved.</p>
+        <ul>
+          <li>"K" = King</li>
+          <li>"Q" = Queen</li>
+          <li>"B" = Bishop</li>
+          <li>"N" = Knight</li>
+          <li>"R" = Rook</li>
+          <li>" " = Pawn</li>
+        </ul>
   
-          <div class="callout">
-            NB: When a pawn captures, you must always note its starting position, even if it couldn't be confused with another pawn. This is just the way things are.
-          </div>
+        <p>Knight's are known as N since K is reserved for the king. If a letter is not given that indicates a pawn. That's what the blank button is for.</p>
   
-          <h5>Pawn Promotion</h5>
-          <p>When a pawn reaches the other end of the board it will get promoted. In this case, you'll be presented buttons for you to indicate which peice the pawn was promoted to (usually a queen).</p>
-        </section>
+        <div class="callout">
+          NB: Castling requires you only tap one button, there are two button options availabe one for kingside castling and one for queenside.
+        </div>
+  
+        <h4>Steps 2 & 3: Note the square you moved to</h4>
+        <p>The board is composed of files (columns) and ranks (rows). They are both named from white's perspective. The file with white's leftmost rook is "a", the next one is "b" and so on until "h". The rank where white's major pieces start is "1", white's pawns start on "2" and so on. This arrangment means that black's leftmost rook starts on the h file and the 8th rank. In this system, each square has a name such as f4 or b8.</p>
+  
+        <p>In most cases, noting the piece and the square is all you need to do.</p>
+  
+        <h4>Special Circumstances</h4>
+        <p>However, some circumstances require more information.</p>
+  
+        <h5>Disambiguating Pieces</h5>
+        <p>Depending on how the board is arranged, the same type of piece may legally be able to move to the same square. For example, if both white rooks are on the first rank with no pieces between them, either rook may move anywhere between them. In this instance you would need to specify the square the rook came from as well as its destination square.</p>
+  
+        <p>You only need to provide either the file or rank of the starting square since that is almost always enough to disambiguate. However sometimes you need to specify both rank and file and it never hurts to specify both. You can do this by pressing "Note Starting Position" after you've indicated which piece you've moved.</p>
+  
+        <div class="callout">
+          NB: When a pawn captures, you must always note its starting position, even if it couldn't be confused with another pawn. This is just the way things are.
+        </div>
+  
+        <h5>Pawn Promotion</h5>
+        <p>When a pawn reaches the other end of the board it will get promoted. In this case, you'll be presented buttons for you to indicate which peice the pawn was promoted to (usually a queen).</p>
+      </section>
       </section>
   
-      <section>
+      <section class="clocks wrapper">
         <h2>Clocks</h2>
-        <h3>Choose a Preset to get started</h3>
-        <ul id="clock-presets">
+        <ul id="clock-presets" class="clock-buttons">
           <li>
-            <a href="game/#5400-30">90 | 30</a>
+            <a class="button" href="game/#5400-30">
+              <span class="base-time">90 min</span>
+              <span class="bonus-time">30 sec</span>
+            </a>
           </li>
           <li>
-            <a href="game/#1800">30</a>
+            <a class="button" href="game/#1800">
+              <span class="base-time">30 min</span>
+            </a>
           </li>
           <li>
-            <a href="game/#900-10">15 | 10</a>
+            <a class="button" href="game/#900-10">
+              <span class="base-time">15 min</span>
+              <span class="bonus-time">10 sec</span>
+            </a>
           </li>
           <li>
-            <a href="game/#600">10</a>
-          </li>
-          <li>
-            <a href="game/#300-5">5 | 5</a>
-          </li>
-          <li>
-            <a href="game/#300">5</a>
-          </li>
-          <li>
-            <a href="game/#180">3</a>
+            <a class="button" href="game/#600">
+              <span class="base-time">10 min</span>
+            </a>
           </li>
         </ul>
-        <button hidden>+ Custom Game Settings</button>
+        <button class="button custom-time">Custom Time</button>
       </section>
   
-      <section hidden>
-        AD
+      <section class="text-center">
+        <a href="#">Give feedback</a>
+      </section>
+  
+      <section class="ad">
+        AD - advertisement goes here.
       </section>
     </main>
+    <script>
+      let showExplainer = false;
+      const explainerButton = document.getElementById('explainer-button');
+      const explainer = document.getElementById('explainer');
+      const ex = document.querySelector('.ex-button');
+      explainer.classList.add('wrapper');
+      document.body.append(explainer);
+
+      ex.addEventListener('click', () => {
+        showExplainer = false;
+        explainer.setAttribute('hidden', true);
+      });
+
+      explainerButton.addEventListener('click', () => {
+        showExplainer = true;
+        explainer.removeAttribute('hidden');
+      });
+    </script>
   </body>
 </html>
