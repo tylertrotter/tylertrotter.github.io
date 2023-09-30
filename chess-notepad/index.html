@@ -4,44 +4,76 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      :root{--magic:#230051;--plum:#381e5a;--snip:#38007f;--spice:#af2aba;--putty:#e0d7ec;--cream:#fffbec;--miami:#d93c91;--negative:var(--miami);--origin:var(--snip);--active:linear-gradient(156deg,var(--spice) 12%,var(--snip) 93.26%);--monospace:ui-monospace,Menlo,Monaco,"Cascadia Mono","Segoe UI Mono","Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Fira Mono","Droid Sans Mono","Courier New",monospace}button[disabled]{background:var(--plum)}*,:after,:before{box-sizing:border-box}body{margin:0;background:var(--magic);color:var(--putty)}.wrapper{padding:16px;margin:0 auto}body,button,input,select{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-size:14px;color:var(--putty)}.ex-button{position:absolute;right:0;border:0;background:transparent}h1{color:var(--color3)}.visually-hidden{position:absolute;left:-200vw}.monospace{font-family:var(--monospace)}svg[viewbox="0 0 18 18"]{fill:none;stroke:#fffbec;stroke-width:2;stroke-linecap:round;width:30px}a{color:var(--cream)}.almost-half{height:45dvh;position:relative}.chess-controls{height:10dvh}.flip{transform:scale(-1)}
+    </style>
   </head>
   <body>
-    <main>
+    <main class="wrapper">
       <h1>Chess Notepad</h1>
+      <div>Chess notation and clock in one</div>
+  
+      <p>Easily save over the board chess games while mastering algebraic notation without even trying.</p>
   
       <section>
-        <h2>How Chess Notepad Works</h2>
-        <p>Summary paragraph</p>
-  
-        <button>Full instructions</button>
-        <section class="chess-notepad__full-instructions">
+        <h2>
+          <button id="explainer-button">How Chess Notepad Works</button>
+        </h2>
+        <section id="explainer" class="chess-notepad__full-instructions" hidden>
           <h3>How the Clock Works</h3>
-          <p>Timer instructions will go here</p>
+          <p>Clocks are set as "N minutes | N increment seconds". The increment is added after each move.</p>
+          <p>The screen is divided in half. Black taps his or her clock to start the other clock and the game.</p>
   
           <h3>How to Notate Your Moves</h3>
-          <p>Instructions will go here</p>
+          <p>This app is meant to guide you in notation while also teaching you how to do it. Each player will get a serious of buttons for notation once they've made their move and stopped their clock.</p>
   
           <h4>Step 1: Note the piece you moved</h4>
-          <p>Instructions will go here</p>
+          <p>The first step is to note the kind of piece you moved. Tap the letter of the piece:</p>
+  
+          <ul>
+            <li>"K" = King</li>
+            <li>"Q" = Queen</li>
+            <li>"B" = Bishop</li>
+            <li>"N" = Knight</li>
+            <li>"R" = Rook</li>
+            <li>" " = Pawn</li>
+          </ul>
+  
+          <p>Knight's are known as N since K is reserved for the king. If a letter is not given that indicates a pawn. That's what the blank button is for.</p>
+  
+          <div class="callout">
+            NB: Castling requires you only tap one button, there are two button options availabe one for kingside castling and one for queenside.
+          </div>
   
           <h4>Steps 2 & 3: Note the square you moved to</h4>
-          <p>Instructions will go here</p>
+          <p>The board is composed of files (columns) and ranks (rows). They are both named from white's perspective. The file with white's leftmost rook is "a", the next one is "b" and so on until "h". The rank where white's major pieces start is "1", white's pawns start on "2" and so on. This arrangment means that black's leftmost rook starts on the h file and the 8th rank. In this system, each square has a name such as f4 or b8.</p>
+  
+          <p>In most cases, noting the piece and the square is all you need to do.</p>
   
           <h4>Special Circumstances</h4>
-          <p>Some circumstances require more information.</p>
+          <p>However, some circumstances require more information.</p>
   
           <h5>Disambiguating Pieces</h5>
-          <p>Instructions will go here</p>
+          <p>Depending on how the board is arranged, the same type of piece may legally be able to move to the same square. For example, if both white rooks are on the first rank with no pieces between them, either rook may move anywhere between them. In this instance you would need to specify the square the rook came from as well as its destination square.</p>
+  
+          <p>You only need to provide either the file or rank of the starting square since that is almost always enough to disambiguate. However sometimes you need to specify both rank and file and it never hurts to specify both. You can do this by pressing "Note Starting Position" after you've indicated which piece you've moved.</p>
+  
+          <div class="callout">
+            NB: When a pawn captures, you must always note its starting position, even if it couldn't be confused with another pawn. This is just the way things are.
+          </div>
   
           <h5>Pawn Promotion</h5>
-          <p>Instructions will go here</p>
+          <p>When a pawn reaches the other end of the board it will get promoted. In this case, you'll be presented buttons for you to indicate which peice the pawn was promoted to (usually a queen).</p>
         </section>
       </section>
   
       <section>
         <h2>Clocks</h2>
-        <h3>Presets</h3>
+        <h3>Choose a Preset to get started</h3>
         <ul id="clock-presets">
+          <li>
+            <a href="game/#5400-30">90 | 30</a>
+          </li>
           <li>
             <a href="game/#1800">30</a>
           </li>
