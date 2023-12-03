@@ -123,7 +123,7 @@ button{
   width: 608px;
   max-width: 72%;
   margin: auto;
-  padding-top: 2vh;
+  padding-top: 2svh;
   /* padding-bottom: var(--s3); */
 }
 
@@ -132,7 +132,7 @@ button{
   text-transform: lowercase;
   margin: 0;
   width: min(100%, 50vw);
-  max-width: 70vh;
+  max-width: 70svh;
   text-align: right;
 }
 
@@ -149,7 +149,7 @@ button{
   display: block;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: max(1rem, calc(1.25vw + 1.25vh));
+  font-size: max(1rem, calc(1.25vw + 1.25svh));
   color: var(--contrast1);
 }
 
@@ -270,12 +270,12 @@ button{
 
 @media (max-width: 500px) and (min-height: 750px) {
   .project.is-active {
-    padding: 3.5vh;
-    padding-top: 4.5vh;
+    padding: 3.5svh;
+    padding-top: 4.5svh;
   }
 
   :root .project__close {
-    padding: 1.5vh;
+    padding: 1.5svh;
   }
 }
 
@@ -413,7 +413,7 @@ opacity: 1;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1em;
-  margin-top: min(1.75rem, 2.5vh);
+  margin-top: min(1.75rem, 2.5svh);
 }
 
 .project__cta:empty:before {
@@ -443,7 +443,7 @@ opacity: 1;
   z-index: -1;
   bottom: 0;
   right: 0%;
-  height: 80vh;
+  height: 80svh;
   fill: var(--accent3);
 }
 
@@ -452,7 +452,7 @@ opacity: 1;
   z-index: -1;
   top: 0;
   left: 0;
-  height: 20vh;
+  height: 20svh;
   fill: var(--contrast2);
 }
 
@@ -579,7 +579,7 @@ opacity: 1;
   }
 
   .bio__name {
-    padding-top: 6vh;
+    padding-top: 6svh;
   }
 
   .projects {
@@ -593,7 +593,7 @@ opacity: 1;
   }
 
   .bio__copy {
-    margin-top: 10vh;
+    margin-top: 10svh;
   }
   
 }
@@ -618,7 +618,7 @@ opacity: 1;
   }
 
   .bio {
-    height: 60vh;
+    height: 60svh;
     overflow: auto;
   }
 
@@ -628,11 +628,11 @@ opacity: 1;
 
   .bio__name {
     margin-left: auto;
-    padding-top: 3.2vh;
+    padding-top: 3.2svh;
   }
 
   .bio__tag {
-    margin-bottom: 1.5vh;
+    margin-bottom: 1.5svh;
     text-align: right;
   }
 
@@ -644,7 +644,7 @@ opacity: 1;
     position: fixed;
     width: 100%;
     bottom: 0;
-    height: 40vh;
+    height: 40svh;
     transition: .5s;
   }
 
@@ -710,7 +710,7 @@ opacity: 1;
     font-size: 14px;
     margin-left: 45%;
     width: 75%;
-    margin-top: 5vh;
+    margin-top: 5svh;
   }
 }
 
