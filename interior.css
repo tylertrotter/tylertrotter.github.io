@@ -29,10 +29,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: #f0eeef83;
-}
-
 a {
   color: var(--contrast1);
 }
@@ -62,7 +58,6 @@ a:visited {
 
 .back {
   font-size: .75rem;
-  font-family: 'Lustria', serif;
   text-decoration: none;
 }
 
@@ -87,7 +82,6 @@ a:visited {
   position: sticky;
   top: 32px;
   align-self: flex-start;
-  font-family: var(--avant-garde);
 }
 
 .content__nav ol {
@@ -118,13 +112,11 @@ a:visited {
 }
 
 .content__description {
-  font-family: var(--avant-garde);
   font-size: 1.5em;
 }
 
 .content__date {
   text-transform: uppercase;
-  font-family: var(--avant-garde);
   font-weight: var(--bold);
   margin: 1em 0;
   color: var(--primary3);
