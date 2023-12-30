@@ -11,7 +11,8 @@ function handleMouseUse() {
 
 document.addEventListener('scroll', () => {
   let scrollPercent = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-  if (scrollPercent > .75)
+  document.documentElement.setAttribute('data-scroll', Math.round(scrollPercent * 10))
+  if (scrollPercent > .9)
     document.documentElement.classList.add('scrolled');
   else
     document.documentElement.classList.remove('scrolled');
