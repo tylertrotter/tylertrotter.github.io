@@ -130,7 +130,7 @@ button{
   }
 
   .bio__name {
-    width: min(100%, 50vw, 60svh);
+    width: min(100%, 50vw, 60vh);
   }
 
   .projects {
@@ -152,14 +152,14 @@ button{
   width: 608px;
   max-width: 72%;
   margin: auto;
-  padding-top: 2svh;
+  padding-top: 2vh;
 }
 
 .bio__name {
   position: relative;
   text-transform: lowercase;
   margin: 0;
-  max-width: 70svh;
+  max-width: 70vh;
   text-align: right;
 }
 
@@ -176,7 +176,7 @@ button{
   display: block;
   text-transform: uppercase;
   font-weight: 300;
-  font-size: clamp(1.2rem, calc(1.4vw + 1.4svh), 3.35rem);
+  font-size: clamp(1.2rem, calc(1.4vw + 1.4vh), 3.35rem);
   color: var(--contrast1);
 }
 
@@ -349,12 +349,12 @@ html:not(.scrolled) .bio__footer {
 
 @media (max-width: 500px) and (min-height: 750px) {
   /* .project.is-active {
-    padding: 3.5svh;
-    padding-top: 4.5svh;
+    padding: 3.5vh;
+    padding-top: 4.5vh;
   } */
 
   :root .project__close {
-    padding: 1.5svh;
+    padding: 1.5vh;
   }
 }
 
@@ -478,7 +478,7 @@ opacity: 1;
   /* z-index: 0; */
   top: 0;
   left: var(--bio-width);
-  height: 20svh;
+  height: 20vh;
   fill: var(--primary2);
 }
 
@@ -550,7 +550,7 @@ opacity: 1;
   }
 
   .bio__name {
-    padding-top: calc(20svh - 80px);
+    padding-top: calc(20vh - 80px);
   }
 
   .projects {
@@ -569,7 +569,7 @@ opacity: 1;
   }
 
   .bio__copy {
-    margin-top: 8svh;
+    margin-top: 8vh;
   }
 
   img {
@@ -630,7 +630,7 @@ opacity: 1;
   }
 
   .bg4 {
-    width: auto;
+    width: 100%;
     transition: transform .5s;
     z-index: 2;
   }
@@ -687,15 +687,15 @@ opacity: 1;
     max-width: none;
     padding-left: var(--margin);
     padding-right: var(--margin);
-    padding-top: 3.2svh;
+    padding-top: 3.2vh;
   }
 
   .bio__name {
-    padding-top: 3.2svh;
+    padding-top: 3.2vh;
   }
 
   .bio__tag {
-    margin-bottom: 1.5svh;
+    margin-bottom: 1.5vh;
     text-align: right;
     margin-right: 4.2%;
   }
@@ -807,7 +807,7 @@ opacity: 1;
     font-size: 14px;
     margin-left: 45%;
     width: 75%;
-    margin-top: 5svh;
+    margin-top: 5vh;
   }
 }
 
