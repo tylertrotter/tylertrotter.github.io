@@ -25,6 +25,14 @@
   }
 }
 
+body::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary3);
+}
+
 html {
   scroll-behavior: smooth;
 }
