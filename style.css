@@ -318,10 +318,18 @@ html:not(.scrolled) .footer {
 }
 
 .selected-work-heading {
-  margin-top: 200px;
+  /* margin-top: 200px;
   font-size: max(50px, 3.7vw);
   color: var(--primary1);
-  line-height: 1;
+  line-height: 1; */
+
+  margin-top: 240px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: var(--accent3);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
 }
 
 @media (max-width: 500px) and (min-height: 750px) {
