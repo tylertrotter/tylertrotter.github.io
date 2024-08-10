@@ -704,6 +704,14 @@ opacity: 1;
     margin-right: 4.2%;
   }
 
+  .footer__container > div {
+    transition: opacity .4s;
+  }
+
+  [data-scroll="9"] .footer__container > div {
+    opacity: 0;
+  }
+
   :root .pic {
     transform: scale(0.6) rotate(21deg) translateX(-80px) translateY(500px);
     width: 100%;
