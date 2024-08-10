@@ -594,7 +594,7 @@ opacity: 1;
   }
 
   [data-scroll="0"] .bg2,
-  [data-scroll="9"] .bg2  {
+  [data-scroll="8"] .bg2  {
     stroke-width: .1px;
   }
 
