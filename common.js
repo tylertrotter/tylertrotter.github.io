@@ -20,7 +20,7 @@ document.addEventListener('resize', () => {
 function handleScroll() {
   let scrollPercent = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
   document.documentElement.setAttribute('data-scroll', Math.round(scrollPercent * 10))
-  if (scrollPercent > .75)
+  if (scrollPercent > .7)
     document.documentElement.classList.add('scrolled');
   else
     document.documentElement.classList.remove('scrolled');
