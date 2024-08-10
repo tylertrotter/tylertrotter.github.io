@@ -577,7 +577,7 @@ opacity: 1;
 
 @media (max-width: 767px) {
 
-  html:not([data-scroll="9"], [data-scroll="10"]) .footer {
+  html:not([data-scroll="5"]) .footer {
     opacity: 0;
   }
 
@@ -594,7 +594,7 @@ opacity: 1;
   }
 
   [data-scroll="0"] .bg2,
-  [data-scroll="8"] .bg2  {
+  [data-scroll="5"] .bg2  {
     stroke-width: .1px;
   }
 
@@ -637,12 +637,12 @@ opacity: 1;
     transition: transform .5s;
   }
 
-  html:not([data-scroll="9"], [data-scroll="10"]) .bg4 {
+  html:not([data-scroll="5"]) .bg4 {
     transform: translateY(60vw);
     z-index: 1;
   }
 
-  html:not([data-scroll="9"], [data-scroll="10"]) .bg4 polygon {
+  html:not([data-scroll="5"]) .bg4 polygon {
     transform: translateX(10px);
   }
 
@@ -673,8 +673,7 @@ opacity: 1;
     padding-right: 0;
   }
 
-  [data-scroll="9"] .footer,
-  [data-scroll="10"] .footer {
+  [data-scroll="5"] .footer {
     z-index: 3;
   }
 
@@ -704,22 +703,13 @@ opacity: 1;
     margin-right: 4.2%;
   }
 
-  .footer__container > div {
-    transition: opacity .4s;
-  }
-
-  [data-scroll="9"] .footer__container > div {
-    opacity: 0;
-  }
-
   :root .pic {
     transform: scale(0.6) rotate(21deg) translateX(-80px) translateY(500px);
     width: 100%;
     bottom: -72vw;
   }
 
-  [data-scroll="9"] .pic,
-  [data-scroll="10"] .pic {
+  [data-scroll="5"] .pic {
     left: 0;
     transform: scale(0.6) rotate(21deg) translateX(-80px);
     transition: transform .5s;
@@ -739,13 +729,11 @@ opacity: 1;
     text-decoration: none;
   }
 
-  [data-scroll="9"] .projects__list,
-  [data-scroll="10"] .projects__list {
+  [data-scroll="5"] .projects__list {
     opacity: .3;
   }
 
-  [data-scroll="9"],
-  [data-scroll="10"]  {
+  [data-scroll="5"]  {
     background: var(--muted);
   }
 
