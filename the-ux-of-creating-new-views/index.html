@@ -1,0 +1,182 @@
+<!doctype html>
+<html data-input="mouse">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWPPZWQTT3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GWPPZWQTT3');
+    </script>
+    <meta charset="utf-8">
+    <title>Tyler Trotter: The UX of Creating New Views</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property='og:title' content="Tyler Trotter's Portfolio"/>
+    <meta property='og:image' content="https://www.ttrotter.com/images/og-image.webp"/>
+    <meta property='og:description' content="Summaries and images from different projects I've undertaken."/>
+    <meta property='og:url' content="https://www.ttrotter.com"/>
+
+    <link rel="icon" href="/favicon.webp" sizes="any">
+    <link rel="stylesheet" href="https://use.typekit.net/oac5fdz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../interior.css">
+    <style>
+      img {
+        border: 1px solid var( --muted-medium);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="wrapper">
+
+          <h1 class="interior-name">
+            <a href="/">
+              <span>Tyler Trotter</span>
+              <svg width="625" height="357" viewBox="0 0 625 357" class="tyler-trotter"><path d="M17.34 352.945v-90.7H0v-26.65h17.34v-39.09h35.1v39.11h16.91v26.65H52.44v90.7l-35.1-.02ZM84.37 352.945v-117.35h33v12.48h.42c6.13-12.48 15.86-16.49 29.39-16.49v35.31c-20.93.21-27.7 8-27.7 21.35v64.7H84.37ZM217.36 356.505c-35.73 0-63.22-26.43-63.22-62.38 0-36.37 28.12-62.37 63.22-62.37 35.31 0 63.22 26.43 63.22 61.95 0 36.8-27.91 62.8-63.22 62.8Zm28.12-62.38c0-15.64-11.84-29.6-28.33-29.6-15.44 0-27.91 13.53-27.91 29.6s12.26 29.6 28.12 29.6c16.49.04 28.12-13.91 28.12-29.56v-.04Z"/><path fill-rule="evenodd" d="M295.044 262v90.7l35.1.02v-90.7h16.92V262h17.97v90.7l35.1.02v-90.7h16.91v-26.65h-16.86v-39.11h-35.1v39.09h-18.833v.02h-16.107v-39.11h-35.1v39.09h-17.3V262h17.3Z" clip-rule="evenodd"/><path d="M453.96 304.955c1.9 13.32 13.11 22.2 27.49 22.2 9.51 0 15.64-3.6 21.35-11h36c-11.21 25.59-32.57 40.6-57.3 40.6a62.141 62.141 0 0 1-44.008-18.172 62.14 62.14 0 0 1-18.222-43.988c0-33.84 27.07-63 61.53-63 35.1 0 62 27.69 62 64.06a45.168 45.168 0 0 1-.84 9.31l-88-.01Zm53.7-23.69c-2.74-12.05-13.32-20.08-26.85-20.08-12.69 0-23.68 7.61-26.43 20.08h53.28ZM562 352.945v-117.35h33v12.48h.42c6.13-12.48 15.86-16.49 29.39-16.49v35.31c-20.93.21-27.7 8-27.7 21.35v64.7H562ZM177.61 157.15V66.44h-17.34V39.8h17.34V.68h35.1V39.8h16.92v26.64h-16.92v90.71h-35.1ZM257.32 196.26l18.61-45L232.37 39.8h37.43l23.47 68.08h.42L316.1 39.8h37.22l-58.81 156.46h-37.19ZM365.16 157.15V.68h35.09v156.47h-35.09ZM453.96 109.15c1.9 13.32 13.11 22.2 27.49 22.2 9.51 0 15.64-3.59 21.35-11h36c-11.29 25.59-32.61 40.59-57.35 40.59a62.128 62.128 0 0 1-62.17-62.16c0-33.83 27.07-63 61.53-63 35.1 0 62 27.7 62 64.07a45.072 45.072 0 0 1-.84 9.3h-88.01Zm53.71-23.68c-2.75-12.05-13.33-20.09-26.86-20.09-12.68 0-23.68 7.61-26.43 20.09h53.29ZM562 157.15V39.8h33v12.47h.42c6.13-12.47 15.86-16.49 29.39-16.49v35.31c-20.93.21-27.7 8-27.7 21.36v64.7H562Z"/></svg>
+            </a>
+          </h1>
+
+          <div>
+            <img 
+              src="../images/views-hero.webp" 
+              alt="The new Cognito Forms logo surrounded by encircling design elements."
+              class="hero hero--border" 
+              width="1000" 
+              height="300" 
+            />
+            <div  class="content">
+              <nav class="content__nav">
+                <ol>
+                  <li>
+                    <a href="#challenge">Challenge</a>
+                  </li>
+                  <li>
+                    <a href="#role">My Role</a>
+                  </li>
+                  <li>
+                    <a href="#process">Process</a>
+                  </li>
+                  <li>
+                    <a href="#results">Results</a>
+                  </li>
+                </ol>
+              </nav>        
+              <div class="content__copy">
+                <h2>The UX of Creating Views</h2>
+                <div class="content__description">Improving the interface for creating new views by addressing key usability issues resulted in a 14 percentage point increase in view creation.</div>
+
+                <h3 id="challenge">Challenge</h3>
+
+                <p><a href="https://www.cognitoforms.com">Cognito Forms</a> sought to boost the visibility and use of data views within its form-building platform.  While the platform already supported sophisticated use cases involving data filtering and sorting for diverse contexts and saving the results, many users who could have benefited from these advanced features were unaware of them, hindering the platform's full potential.</p>
+
+                <p>However, the scope of the problem was uncovered during an initiative to make views easier to access—not change how they were managed or discovered. Development resources were constrained by the high volume of other changes and the initial goal was to not dramatically change view management.</p>
+
+                <h3 id="role">My Role</h3>
+
+                <p>I was responsible for leading the product design team in:</p>
+
+                <ul>
+                  <li>Brainstorming and iterating on prototype designs</li>
+                  <li>Conducting user interviews with existing customers</li>
+                  <li>Synthesizing research findings into a report and presenting it to the product team</li>
+                  <li>Presenting solutions and prototypes to stakeholders</li>
+                  <li>Conducting follow-up user testing to validate the new design</li>
+                </ul>
+                
+                <h3 id="process">Process</h3>
+                
+                <p>User interviews revealed significant usability problems with both the existing and a slightly modified interface for managing views. Users struggled to create and save new views, often resorting to ad-hoc filtering or unintionally overwriting their primary "All Entries" view. I presented these findings, including statistics and video clips from user testing, and persuasively illustrated the severity of these issues which led the product managers to allocate time for the design team to go back to the drawing board.</p>
+
+                <p>We ultimately adopted on a tab-based approach which was explored earlier but initially dismissed to minimize interface changes. The tabs, along with other tweaks more clearly communicated the ability to create multiple distinct views. After working out all the details in this new paradigm, we validated the new design through further user testing, confirming its improved usability.</p>
+               
+                <div class="content__images content__images--3">
+                  <figure>
+                    <img 
+                      src="../images/cognito-entries.png" 
+                      alt="A screenshot of the existing Cognito Forms views interface"
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>UI as it existed before we started changing things.
+                  </figure>
+                  <figure>
+                    <img 
+                      src="../images/views-1.webp" 
+                      alt="A screen of one of the very first iterations of the design"
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>Early iteration: This layout keeps views in a dropdown - it did not test well. <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=21-10070&t=dL1oVBQeWOEeauOq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A10070&show-proto-sidebar=1" target="_blank">(Figma)</a></figcaption>
+                  </figure>
+                  <figure>
+                    <img 
+                      src="../images/views-2.webp" 
+                      alt="A screen of a middle iteration of the design. It shows a Save/Save As modal."
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>A version with more prominent dropdown and modal asking if they wanted to save as a new view. <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=57-12315&t=dL1oVBQeWOEeauOq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=57%3A12315&show-proto-sidebar=1" target="_blank">(Figma)</a></figcaption>
+                  </figure>
+                  <figure>
+                    <img 
+                      src="../images/views-3.webp"  
+                      alt="A close up of a dropdown to access the different views."
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>An iteration that progressively revealed complexity behind 2 icons. <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=42-10494&t=dL1oVBQeWOEeauOq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=42%3A10494&show-proto-sidebar=1" target="_blank">(Figma)</a></figcaption>
+                  </figure>
+                  <figure>
+                    <img 
+                      src="../images/views-4.webp" 
+                      alt="A closeup of tabs in a UI"
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>Getting Close: An iteration with tab for each view followed by a plus button to add new views. <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=71-14693&t=dL1oVBQeWOEeauOq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=71%3A14693&show-proto-sidebar=1" target="_blank">(Figma)</a></figcaption>
+                  </figure>
+                  <figure>
+                    <img 
+                      src="../images/views-5.webp"  
+                      alt="The full screen if the final design."
+                      width="1450" 
+                      height="914" 
+                      loading="lazy" 
+                    />
+                    <figcaption>The final iteration that introduced a "Save As" button introduced to encourage new view creation. <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=21-10920&t=IgYA3BQhDQhpiPku-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A10920&show-proto-sidebar=1" target="_blank">(Figma)</a></figcaption>
+                  </figure>
+                </div>
+
+                <a href="https://www.figma.com/proto/NKJyKiFzN2ZN6KnyjDdAkV/Making-Views-Easy?node-id=21-10070&t=dL1oVBQeWOEeauOq-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A10070&show-proto-sidebar=1">Interact with Figma Prototypes of these design iterations.</a>
+
+                <h3 id="results">Results</h3>
+
+                <p>The revised view interface was rolled out as an opt-in experience. In the three weeks following launch, users with the new UI showed an 63% increase in view creation compared to the six weeks prior. While a seasonal increase in activity was expected (evidenced by a 49% increase in the control group using the legacy UI), the new design resulted in a 14 percentage point greater increase in view creation, directly addressing the project goal and significantly improving user engagement with data analysis features.</p>
+
+                <div class="content__images content__images--1">
+                  <figure>
+                    <img src="../images/new-views-graph.png">
+                    <figcaption>This chart shows how many views were created by the cohort that would opt in to the new UI. The new UI was released at the end of the year (about the two-thirds mark in the chart). We expect an increase in activity at the start of every year (the light gray line shows a baseline), but the new UI outperformed the expected bump in new views.</figcaption>
+                  </figure>
+                </div>
+
+              </div>
+            </div>
+          </div>
+    </div>
+    <script src="../common.js"></script>
+    <script src="../interior.js"></script>
+  </body>
+</html>
